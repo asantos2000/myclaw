@@ -70,6 +70,7 @@ Thumbs.db
 
 # OpenClaw/workspace
 .openclaw/
+skills/
 skills/*/credentials/
 skills/*/.secrets/
 memory/heartbeat-state.json
