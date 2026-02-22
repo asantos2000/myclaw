@@ -78,6 +78,42 @@ _Last updated: 2025-02-21_
 | Replayability after case solved | Multiple endings; optional “perfect run” challenges; daily cold cases; community uploads. |
 | Art Deco aesthetic may feel dated or niche | Blend with universal ghost story; use color-blind palette; provide alternative themes. |
 
+## Metroidbrainia Alignment
+
+Drawing from Joseph Mansfield’s in-depth article on Metroidbrainia (Thinky Games, July 2025), *Echoes of Absence* aligns strongly with the knowledge-gated exploration genre. Below we map the core pillars of Metroidbrainia design to our concept, highlight unique contributions, and note any deviations.
+
+### Knowledge
+
+Metroidbrainias define themselves by knowledge that unlocks further exploration. In *Echoes*, the core knowledge is **systemic**: understanding how NPC routines work, how echo placements ripple forward, and how to deduce the killer from causal chains. Players also accumulate **non-systemic** knowledge (trivia) — specific times, locations, relationships, and red herrings — that must be pieced together.
+
+- **Systemic knowledge:** NPC behavior rules, echo effect constraints (e.g., cannot affect someone directly observing you), time windows, routine determinism. Gained through rule-discovery during repeated loops.
+- **Non-systemic knowledge:** Facts like “the butler carries the poisoned vial at 21:00” or “the victim was seen arguing with the maid”. These are scattered clues that require integration.
+- **Knowledge transformation:** Players must synthesize both types to form a complete hypothesis. For example, knowing the butler’s schedule (systemic) plus the time of death (clue) lets you place an echo to intercept the poison.
+
+### Knowledge Gates
+
+Gates in *Echoes* are the mechanisms that verify the player’s understanding before allowing progress toward solving the case. They are primarily **puzzle gates** and **environmental gates**, with some **combination locks**.
+
+- **Puzzle gates:** The final deduction interface where you select the killer and motive. Solving it requires applying all gathered knowledge.
+- **Environmental gates:** Certain areas or crucial moments are only accessible if you’ve gained specific knowledge. For example, to observe a private conversation, you must know which room the characters will enter and when; that knowledge gate is opened by discovering the routine.
+- **Combination locks:** In some cases, you might need to input a sequence of actions (e.g., echo on object A at time T, then object B) to reveal a hidden clue. These act as combination locks of behavior.
+- **Gate clarity:** Gates range from **clear** (you see a locked door and know it needs a key item you lack) to **cryptic** (a strange pattern only understood after many loops) to **hidden** (you didn’t realize certain NPC interactions were gates until later). *Echoes* will feature mostly clear and cryptic gates, with occasional hidden ones for “aha” moments.
+- **Transformation requirement:** Unlike simple 1‑to‑1 check gates, many *Echoes* gates expect you to transform knowledge (e.g., combine two separate routine discoveries to infer a missing alibi).
+
+### Non‑Linear Exploration
+
+The mansion is a non‑linear space with branching paths and multiple observation points. Players choose which rooms to monitor, which NPCs to follow, and which echoes to place. Knowledge persistence (the journal) allows revisiting earlier areas with new insights, uncovering previously missed interactions. The 10‑second window encourages precise scouting, but exploration is not forced linear; you can jump between locations across different loops.
+
+### Unique Twists
+
+- **Time‑loop integration:** Knowledge is not just collected; it is *tested* by placing echoes and seeing immediate causal ripples. The loop itself reinforces learning.
+- **Indirect influence:** Unlike most Metroidbrainias where you directly manipulate puzzles, *Echoes* uses indirect nudges. The gate is not “solve the puzzle” but “figure out which nudge will alter the outcome.”
+- **Murder mystery framing:** The ultimate knowledge gate is identifying the killer. This narrative drive gives purpose to exploration beyond abstract puzzle solving.
+
+### Alignment Summary
+
+*Echoes of Absence* captures the essence of Metroidbrainia: knowledge‑gated exploration, systemic rule‑discovery, non‑linear world traversal, and transformative “aha” moments. It extends the genre with temporal causality and a strong narrative core, positioning it alongside titles like *Outer Wilds*, *The Witness*, and *Toki Tori 2+* while carving its own niche.
+
 ## Next Steps (Prioritized)
 
 1. **Prototype core loop:** Tap to observe, place echo, see immediate ripple, read short outcome. Validate fun.
@@ -91,4 +127,4 @@ _Last updated: 2025-02-21_
 
 ---
 
-*Document version: 1.0*
+*Document version: 2.0* (Metroidbrainia Alignment added)
