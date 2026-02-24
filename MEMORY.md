@@ -4,23 +4,27 @@
 
 ### Magnet Madness (Game Design)
 **Started:** 2026-02-24
-**Status:** Concept phase, design document complete
+**Status:** Concept phase, design document complete (revised)
 **Location:** `games/Magnet-Madness/GAME_DESIGN.md`
 
-A horror-comedy adventure game where a naive scientist uses magnetic manipulation to navigate a haunted facility, assisted by a glitch-prone robot companion named Bleep. Key features include material-swapping robot customization and physics-based magnetism puzzles.
+A horror-comedy puzzle game where the player acts as an invisible experiment designer. They set up magnetic obstacle courses for Bleep the robot, choose his material, then watch the autonomous run (~30 seconds). A reactive scientist portrait provides humorous commentary. The player has one emergency stop per run to abort and prevent damage.
 
 **Core Mechanics:**
-- Magnetic gauntlet with attract/repel/polarity toggle
-- Robot Bleep can have different material frames (wood, steel, aluminum, plastic, ruby)
-- Strong magnets cause Bleep to glitch erratically (both hindrance and tool)
-- Material choices affect puzzle solutions
+- Design phase: Place magnetic objects, configure fields, set Bleep start position and material
+- Watch phase: Bleep navigates autonomously via AI; glitches triggered by magnetic exposure
+- Material system: wood (stable), aluminum (fast), steel (attracted), plastic (durable), ruby (special)
+- Glitch behaviors: 8+ types that hinder or occasionally help
+- Damage system: Bleep returns visibly damaged on failure; must be repaired
+- Emergency stop: single-use per run to abort and avoid damage
+- Scientist portrait: Doom-style reactive overlay with expressions and catchphrases
 
 **Next Steps:**
 1. Prototype core physics/magnetism system
-2. Define Bleep's glitch behavior probability table
-3. Create visual mood board
+2. Implement Bleep AI with material-modified pathfinding
+3. Define glitch behavior probability table and effects
+4. Build scientist commentary/portrait system
 
-**Related:** Game concept pitched to Mr. Anderson on 2026-02-24, approved for development.
+**Related:** Concept pitched 2026-02-24; design revised per feedback to "design-then-watch" paradigm.
 
 ## Notes on Preferences
 

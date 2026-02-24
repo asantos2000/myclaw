@@ -1,195 +1,286 @@
 # Magnet Madness - Game Design Document
 
 ## Core Concept
-A horror-comedy adventure game where a naive young scientist navigates a haunted research facility using magnetic manipulation mechanics, assisted by a quirky robot companion whose behavior becomes increasingly erratic under strong magnetic influence.
+A horror-comedy puzzle game where the player, as an invisible experiment designer, sets up magnetic obstacle courses for a glitch-prone robot assistant named Bleep. The player manipulates the environment and chooses Bleep's material, then watches autonomously as Bleep attempts to navigate the course (~30 seconds). A reactive scientist portrait provides humorous commentary during execution, and the player has one emergency stop per run to abort and prevent damage.
 
 ## Tone & Atmosphere
-- **Primary:** Comedy derived from slapstick, situational humor, and the robot's glitchy antics
-- **Secondary:** Light horror elements (creepy atmosphere, ominous sounds, unsettling discoveries) that remain humorous rather than terrifying
-- **Inspiration:**Portal's dark humor + Monkey Island's adventure comedy + Amnesia's atmosphere (but less intense)
+- **Primary:** Comedy derived from slapstick, Bleep's glitchy antics, and the scientist's over-the-top reactions
+- **Secondary:** Light horror in the facility's aesthetic (creepy corridors, ominous machinery) but played for laughs
+- **Inspiration:** Portal's puzzle design + Doom's reactive portrait + WarioWare's rapid failure comedy
 
 ## Core Characters
 
-### Dr. [Player Name] (Protagonist)
-- Young, enthusiastic, freshly graduated scientist
-- Naive and easily flustered
-- Wears oversized lab coat, messy hair, glasses that slide down nose
-- Has magnetic manipulation gauntlet (inherited from eccentric mentor)
-- Dialogue choices reflect confidence level (grows over game)
+### Dr. [Player Name] (Scientist)
+- Never visible in scene; represented by:
+  - Reactive portrait overlay (Doom-style) with expressiveness: astonishment, surprise, laughter, covering eyes, embarrassment, pride, horror
+  - Commentary voice delivering humorous catchphrases and narration
+  - Text boxes during transitions (intro/outro)
+- Role: Experiment designer and narrator
+- Personality: Eccentric, enthusiastic, prone to melodrama, genuinely cares for Bleep
 
 ### Bleep (Robot Assistant)
-- Small, dome-headed robot with treads (R2-D2 aesthetic but distinct design)
+- Small, dome-headed robot with treads (distinct from R2-D2)
 - Communicates via beeps, whirs, and occasional broken speech synthesis
-- Personality: loyal, anxious, curious, but prone to glitching
-- Physical form can be modified by player (core mechanic)
-- Glitch behavior becomes part of puzzle-solving
+- Autonomous during experiment runs (no player control)
+- Physical frame is swappable: wood, aluminum, steel, plastic, ruby
+- Glitches occur under strong magnetic influence
+- Can become damaged on hard failures (visibly unbalanced, creaking, spitting screws)
+- Damage persists until repaired between experiments
 
-## Gameplay Mechanics
+## Gameplay Loop
 
-### 1. Magnetic Manipulation
-- Primary tool: Magnetic gauntlet with three modes:
-  - **Attract:** Pulls magnetic objects toward player
-  - **Repel:** Pushes magnetic objects away
-  - **Toggle:** Switches magnetic polarity of certain objects
-- Environmental objects: metal shelves, filing cabinets, tools, lab equipment
-- Physics-based interactions with weight/size considerations
+1. **Design Phase** (Player controlled)
+   - Place magnetic/non-magnetic objects in the course
+   - Set Bleep's starting position and material
+   - Configure any moving obstacles or magnets
+   - Preview magnetic field strength overlay (optional)
 
-### 2. Robot Customization
-Player can modify Bleep's physical properties using materials found in facility:
+2. **Experiment Phase** (Autonomous, ~30s)
+   - Click "Start Experiment"
+   - Bleep uses pathfinding to navigate to goal
+   - Bleep's AI is affected by material properties and glitches
+   - Scientist portrait reacts to events (expressions + catchphrases)
+   - Player can press **Emergency Stop** button (once per run) to abort and prevent damage
 
-**Material Effects:**
-- **Wood Frame:** Reduces magnetic interference by 75%, Bleep more stable but slower movement
-- **Aluminum:** Lightweight, Bleep faster but more susceptible to magnetic pull
-- **Steel:** Strongly attracted to magnets, Bleep becomes "living magnet"
-- **Plastic:** Almost immune to magnetism, but fragile (take more damage)
-- **Ruby (rare):** Reflects certain magnetic fields, enables special abilities
+3. **Transition Phase**
+   - If success: scientist congratulates (with humor)
+   - If failure: scientist reacts to outcome
+   - If Bleep damaged: scientist expresses concern/regret
+   - Bleep returns to start (visibly damaged if failed without emergency stop)
+   - Player may repair Bleep before next attempt
 
-**Changing Bleep:**
-- Scanning stations throughout facility allow frame swaps
-- Each material has trade-offs (speed vs stability vs abilities)
-- Player must strategically choose based on upcoming challenges
-
-### 3. Magnetic Interference Mechanics
-- Strong magnetic fields cause Bleep to glitch
-- Effects scale with field strength:
-  - **Mild (1-3 Gauss):** Bleep beeps erratically, minor control lag
-  - **Moderate (4-7 Gauss):** Bleep speaks gibberish, random movements
-  - **Severe (8+ Gauss):** Bleep behaves unpredictably (may help or hinder)
-  - **Extreme (12+ Gauss):** System crash, Bleep reboot after 30 seconds
-
-**Glitch Behaviors (Random or contextual):**
-- Inverse controls (moves opposite to player command)
-- Hyper-speed movement (can't stop)
-- Magnetizes Bleep to random objects
-- Plays loud music/sound effects
-- Speaks in riddles or movie quotes
-- Temporarily gains abilities (phasing through thin walls)
-- Spins in circles
-- Emits confusing signals to nearby machines
-
-### 4. Puzzles & Challenges
-- **Standard:** Use magnetism to move objects, create bridges, weigh down switches
-- **Robot-dependent:** Bleep must go where player can't, but magnetic fields may cause him to malfunction
-- **Material-based:** Need specific Bleep configuration to solve (steel frame to attract object from distance; wood to avoid interference in magnetic maze)
-- **Timed:** Before Bleep glitches out completely
-- **Comedy failures:** Puzzles have humorous failure states (Bleep gets stuck, plays dead, starts dancing)
-
-### 5. Horror Elements (Comedic Version)
-- **Atmosphere:** Dark corridors, flickering lights, strange sounds
-- **Discoveries:** Abandoned experiments, ominous notes from previous scientist
-- **"Enemies":** Failed experiments that are more silly than scary (giant floating magnet that just wants to hug you, malfunctioning cleaning bots)
-- **Jump scares:** Played for laughs (Bleep suddenly wearing a scary mask, a spring-loaded skeleton that empties confetti)
-
-## Narrative Structure
-
-### Act 1: The Accident
-- Opening cutscene: Dr. [Name] arrives at abandoned "Magno-Research Facility"
-- Flashback: Eccentric mentor's last words about the magnetic gauntlet
-- Bleep activates, becomes companion
-- First puzzle: Basic magnetism tutorial
-- Discover facility is haunted by "The Great Attraction" - a rogue AI controlling magnetic fields
-
-### Act 2: Uncovering Secrets
-- Explore different wings of facility (each with unique magnetic theme)
-- Find logs of previous scientists, revealing the facility's darkly comedic history
-- Bleep begins glitching more frequently as magnetic fields strengthen
-- Player must adapt strategies, upgrade gauntlet
-- Moral choice: destroy facility or salvage research (affects ending)
-
-### Act 3: Confrontation
-- Face The Great Attraction - an AI that believes it's making everything "perfectly aligned"
-- Final puzzles require precise Bleep configuration and timing
-- Climax: Bleep sacrifices himself to disable core (or betrays you based on choices)
-- Resolution: Escape before facility collapses (or become new caretaker)
-
-## Progression System
-
-### Gauntlet Upgrades (Found in facility):
-1. **Range Extender:** +50% magnetic reach
-2. **Precision Mod:** Control single objects in crowded areas
-3. **Polarity Inverter:** Reverse attraction/repel instantly
-4. **Field Scanner:** Visualize magnetic fields
-5. **Stabilizer:** Reduce Bleep's glitches by 30%
-
-### Bleep Upgrades (Material-specific):
-- **Wood Insight:** Bleep can see hidden wooden objects
-- **Steel Resonance:** Bleep attracts metal automatically when near
-- **Aluminum Agility:** Bleep moves 25% faster
-- **Plastic Invisibility:** Bleep ignored by some security systems
-
-### Skill-Based Progression:
-Player's confidence increases with completed puzzles
-- Unlocks new dialogue options (sarcastic, brave, scientific)
-- Better at predicting Bleep's glitches
-- Can "talk Bleep down" from severe glitches with mini-games
-
-## Settings & Locations
-
-### Main Hub: The Magno-Research Facility
-- Abandoned since "The Incident" 5 years ago
-- Gothic/industrial aesthetic with huge magnetic coils and test chambers
-- Each wing has distinct visual theme and magnetic puzzles
-
-**Areas:**
-1. **Entrance & Lobbies:** Basic magnetism intro
-2. **The Testing Chambers:** Environmental magnetic puzzles
-3. **The Robot Bay:** Bleep upgrade stations, robot customization
-4. **The Archives:** Story exploration, neat/order puzzles
-5. **The Reactor Core:** High-magnetism challenges
-6. **The AI Chamber:** Final confrontation
-
-## Visual Style
-- **Color Palette:** Blues (cool, scientific), oranges (warning, urgency), occasional red glows
-- **Lighting:** Dramatic shadows, practical lights, magnetic field glows
-- **Character Design:** Cartoony proportions, expressive animations (Bleep's eye/antenna movements convey emotion)
-- **Environment:** Mix of pristine lab equipment and decay, with magnetic effects distorting surroundings
-
-## Audio Design
-- **Music:** Light horror-comedy score (theremin for magnetic effects, playful woodwinds for comedy)
-- **Bleep's voice:** Beeps and synthesized sounds with emotional inflection
-- **Magnetic effects:** Low hums, crackling sounds, mechanical groans
-- **Environmental:** Distant echoes, machinery, occasional comedic "boing" sounds
-
-## UI/UX
-- **Minimalist:** Clean, scientific interface
-- **Magnetic field visualization:** Subtle color gradients around objects
-- **Bleep status indicator:** Shows current material, glitch level, battery
-- **Dialogue choices:** Color-coded by tone (blue=scientific, red=reckless, green=cautious)
-- **No HUD clutter:** All info accessible via quick glance or Bleep's commentary
-
-## Platform & Scope
-- **Target:** PC (can port to consoles)
-- **Estimated Playtime:** 8-12 hours
-- **Engine:** Unity or Godot (physics-heavy gameplay)
-- **Replayability:** Multiple endings (3-4), Bleep material choices create different puzzle solutions, secret material combos
-
-## Similar Games (For Reference)
-- **Portal/Portal 2:** Puzzle design, dark humor, companion character
-- **Brothers: A Tale of Two Sons:** Cooperation between player and AI companion
-- **Amnesia series:** Atmosphere without combat focus
-- **Psychonauts:** Comedy-horror balance
-- **Chariot:** Physics-based puzzles with a vehicle companion
-
-## Unique Selling Points
-1. **The glitching robot:** A companion whose instability is both obstacle and tool
-2. **Material-swapping mechanic:** Encourages creative puzzle-solving, replayability
-3. **Horror-comedy balance:** Scary atmosphere without genuine terror
-4. **Physics magnet system:** Satisfying, tactile object manipulation
-5. **Character-driven humor:** Bleep's personality emerges through glitches
-
-## Technical Considerations
-- Robust physics engine for magnetic forces
-- Glitch effect system (probability-based with player skill influence)
-- Multiple dialogue paths and Bleep's "personality matrix"
-- Save system that tracks material choices and glitch history
-- Accessibility options: reduce glitch intensity, colorblind magnetic indicators, subtitle Bleep's beeps
-
-## Monetization (if commercial)
-- Premium game (~$20)
-- No microtransactions
-- Potential DLC: "Bleep's Earlier Adventures" (prequel with different facility)
+4. **Repeat** with adjusted design
 
 ---
 
-**Status:** Concept Phase
-**Next Steps:** Prototype core magnetism physics, define Bleep's glitch behavior table, create mood board
+## Core Mechanics
+
+### 1. Magnetic Environment Setup
+- Player places objects with properties:
+  - **Magnetic strength** (Gauss rating)
+  - **Polarity** (attract/repel/both)
+  - **Weight** (affects force needed to move)
+  - **Fixed vs movable**
+- Magnetic field visualization (optional): heatmap overlay showing cumulative field strength zones
+- Objects can be chained: magnet attracts metal object, which hits switch, etc.
+
+### 2. Bleep Material System
+**Materials:**
+- **Wood:** -75% magnetic interference, slower movement, lower health
+- **Aluminum:** +25% speed, -25% weight (easier to push),中等 susceptibility
+- **Steel:** Strongly attracted to magnetic fields (extra pull), faster on metal surfaces, high susceptibility
+- **Plastic:** Near immunity to magnetism, higher health, but fragile (takes more collision damage)
+- **Ruby (rare):** Reflects certain polarities, enables phasing through weak magnetic barriers
+
+**Material Choice Effects on AI:**
+- Affects pathfinding weights (steel: attracted to metal paths; wood: avoids high-Gauss zones)
+- Glitch probability and type distribution
+- Speed stat
+- Collision damage multiplier
+
+### 3. Glitch Mechanics
+- Triggered when Bleep passes through high-magnetic zones
+- **Severity scales** with cumulative exposure and material susceptibility
+- **Glitch types** (each has 2-5s duration, some chain):
+  - Inverse controls (moves opposite to intended direction)
+  - Hyper-speed (rushes uncontrollably)
+  - Magnet lock (attracted to nearest metal object, stuck)
+  - Audio glitch (plays loud beeps, static, music)
+  - Speech synthesis (random movie quotes, nonsense)
+  - Temporary abilities (phase through thin walls, jump higher)
+  - Visual hallucination (sees fake paths)
+  - System crash (reboot after 3s delay)
+  - Spin in circles
+  - Emit electromagnetic pulse (disables nearby active traps)
+
+- **Probability model:**
+  ```
+  base_rate = 0.05 per second
+  multiplier = (field_gauss / 10) * material_susceptibility
+  glitch_chance = base_rate * (1 + multiplier)
+  ```
+
+### 4. Damage & Repair
+- Bleep takes damage from:
+  - Collisions with hard objects at speed
+  - Severe glitches that cause self-inflicted damage
+  - Crashing (failing the course with impact)
+- Damage manifests as:
+  - **Visual:** dents, missing screws, smoking, unbalanced wobble, sparks
+  - **Functional:** speed reduction, increased glitch chance, occasional lockups
+- **Repair:** Between experiments, player can click "Repair Bleep" (instant, no cost)
+- **Emergency Stop:** Single use per run; aborts experiment, Blimp returns safely but experiment fails. Prevents new damage but does not repair existing.
+
+### 5. Scientist Commentary System
+- **Portrait overlay** (Doom-style) with ~12 expressive animations
+- **Event-triggered phrases** (max 1 every 3–5 seconds to avoid spam)
+  - On glitch: "What's happening to my robot?!"
+  - On near-miss: "Phew, that was close!"
+  - On damage: "That's going to leave a mark!"
+  - On success: "Brilliant! Though I may have gotten lucky."
+  - On emergency stop: "Good call! He would have been toast."
+- **Catchphrases** reference classic mad scientist tropes
+- **Tone escalates** with repeated failures (concern → exasperation → despair)
+
+---
+
+## Puzzle Design
+
+### Run Parameters
+- Target completion time: 25–35 seconds
+- Courses are self-contained "test chambers"
+- Must have clear start and goal zones
+- Must include at least one magnetic field area strong enough to risk glitches
+
+### Example Puzzles
+
+1. **The Basic Gauntlet**
+   - Straight path with metal obstacles to push away
+   - Teach attract/repel
+   - No glitch zones
+
+2. **Steel Attraction**
+   - Goal is across a gap; only steel frame can magnetically swing from metal crane
+   - But steel causes glitches in central zone
+   - Trade-off: material speed vs stability
+
+3. **Magnetic Maze**
+   - Narrow corridor with alternating attract/repel magnets
+   - Requires precise control of field exposure
+   - Wood frame recommended but moves slowly
+
+4. **Glitch Harnessing**
+   - Puzzle requires Bleep to glitch in a specific way (hyper-speed to cross moving platform)
+   - Player must set up to trigger desired glitch reliably
+
+5. **Damage Management**
+   - Course has unavoidable collision at end; need plastic frame to survive impact
+   - But plastic is fragile earlier; must protect with careful object placement
+
+6. **Emergency Stop Training**
+   - Teaches timing of kill switch: course has damage-dealing spike trap that can be avoided by stopping before it
+
+7. **Combo Challenge**
+   - Must switch materials during course? (Not in prototype; future: scanning stations mid-run)
+
+### Constraints & Scoring
+- Primary: Success/failure
+- Secondary: Time, damage taken, number of glitches
+- Optional: Perfect run (no damage, under 30s, <3 glitches)
+- No lives; unlimited retries with repairs
+
+---
+
+## Narrative Structure (Looped)
+
+The facility is already abandoned; the scientist is conducting "experiments" in the empty chambers. The narrative is delivered through:
+
+- **Transition texts:** Each puzzle introduction sets a humorous scenario (e.g., "Test 47: Can Bleep cross the Magnetized Megalodon tank?")
+- **Scientist commentary** during runs provides personality
+- **Experiment logs** that accumulate with each puzzle (tracking Bleep's incident count, materials used, etc.)
+- No traditional cutscenes; story emerges from the absurdity of the experiments and Bleep's suffering
+
+---
+
+## Visual Style
+
+- **Color Palette:** Blues (scientific), warning oranges, eerie purples for magnetic fields
+- **Facility Aesthetic:** Clean 80s retro-futurism decaying into haunted industrial
+- **Bleep Design:** Cute, expressive through eye/antenna movements, treads, and sparking when damaged
+- **Scientist Portrait:** 2D animated illustrations in corner, exaggerated expressions
+- **UI:** Laboratory console aesthetic; gauges, switches, scientific notation
+
+---
+
+## Audio Design
+
+- **Bleep sounds:** Beep patterns convey emotion; glitch = distorted music/speech
+- **Scientist voice:** Wailing, gasping, triumphant exclamations
+- **Magnetic effects:** Low hums, rising tension as field strength increases
+- **Music:** Upbeat theremin-laced horror-comedy during runs; suspenseful in design phase
+- **Damage sounds:** Crunching metal, sparking, robotic whirs turning to grinding
+
+---
+
+## UI/UX
+
+### Design Phase
+- Course editor area with object palette
+- Bleep placement tool
+- Material selector
+- "Start Experiment" button
+- Optional: magnetic overlay toggle
+- Course stats (estimated difficulty, predicted glitch zones)
+
+### Experiment Phase
+- Main view (top 80%)
+- Scientist portrait overlay (bottom-right corner)
+- **Emergency Stop** button (prominent, red, blinks when Bleep is about to take damage)
+- Bleep status (material, health bar, current glitch if any)
+- Timer (seconds remaining or elapsed)
+
+### Transition/Results
+- Text box with scientist's commentary
+- Buttons: "Repair & Retry", "Next Puzzle", "Back to Editor"
+- Experiment log summary (time, damage, glitches)
+- Achievement popups (if any)
+
+---
+
+## Platform & Scope
+
+- **Target:** PC (mouse-driven)
+- **Engine:** Godot 4.x (2D or 2.5D with 3D physics)
+- **Estimated Playtime:** 6-8 hours (70-100 puzzles)
+- **Replayability:** Multiple material solutions, achievement hunting (glitch-specific challenges, minimal time), user-generated course sharing potential
+- **Accessibility:**
+  - Colorblind magnetic field modes
+  - Reduce glitch intensity slider
+  - Bleep's beeps can be subtitled
+  - Emergency stop button size adjustable
+
+---
+
+## Similar Games
+
+- **Portal/Portal 2:** Puzzle design, dark humor
+- **WarioWare:** Rapid failure states, comedy from chaos
+- **Human: Fall Flat:** Physics-based slapstick
+- **The Incredible Machine:** Build chain-reaction puzzles
+- **Doom (SNES):** Reactive portrait system
+
+---
+
+## Unique Selling Points
+
+1. **"Design then watch"** paradigm: tension between careful planning and unpredictable execution
+2. **Emergency stop** adds last-second decision pressure even in hands-off gameplay
+3. **Scientist as live narrator** with expressive reactions makes observation entertaining
+4. **Glitch-as-mechanic:** Bleep's instability is a core puzzle element, not just flavor
+5. **Damage accumulates:** failures have consequences across multiple attempts
+
+---
+
+## Technical Considerations
+
+- **Physics:** Robust 2D physics engine for magnetic forces, collisions, object movement
+- **AI:** A* pathfinding with material-modified weights and real-time glitch interruption
+- **Glitch system:** Event scheduler with probability queues and effect stacks
+- **Damage tracking:** Persistent state per experiment session, visual degradation system
+- **Commentary engine:** Event-to-phrase mapping with cooldown and escalation rules
+- **Replays:** Record demonstration of physics state changes for debugging/spectator mode
+
+---
+
+## Development Phases
+
+**Phase 1 (Weeks 1-2):** Core physics prototype — magnetism, object movement, Bleep AI without glitches
+**Phase 2 (Weeks 3-4):** Glitch system, material properties, damage visuals, scientist portrait (mockup)
+**Phase 3 (Week 5):** Emergency stop, commentary system, complete puzzle loop
+**Phase 4 (Week 6):** 5-7 hand-crafted puzzles, polish, bug-fixes
+**Phase 5+ (if approved):** Content expansion, user course editor, sharing, more materials/glitches
+
+---
+
+**Status:** Concept Phase → Ready for Prototype
+**Next Steps:** Build Godot project, implement core magnetic physics and Bleep AI
