@@ -1,0 +1,48 @@
+# Godot 4.x ignore file
+
+# Imported resources (should be regenerated automatically)
+*.import
+
+# Godot-specific files
+.godot/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-specific (if desired)
+# user settings (optional)
+# project.json # Godot 3
+
+# External files
+# user mods (optional)
+# mods/
+
+# Godot 4 specific
+# exported projects
+# export/
+# *.pck
+# *.exe
+# *.dmg
+# *.app
+# *.apk
+# *.html
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Test results
+tests/

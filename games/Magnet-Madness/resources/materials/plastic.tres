@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/material_data.gd" id="1_oeg5p"]
+
+[resource]
+script = ExtResource("1_oeg5p")
+material_name = "Plastic"
+magnetic_susceptibility = 0.1
+speed_modifier = 0.9
+health_modifier = 1.2
+collision_damage_multiplier = 1.0
+color = Color(0.2, 0.6, 0.3, 1)

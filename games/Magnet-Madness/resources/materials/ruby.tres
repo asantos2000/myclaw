@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaterialData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/material_data.gd" id="1_vi25b"]
+
+[resource]
+script = ExtResource("1_vi25b")
+material_name = "Ruby"
+magnetic_susceptibility = 0.0
+speed_modifier = 1.0
+health_modifier = 1.5
+collision_damage_multiplier = 1.0
+color = Color(0.8, 0.05, 0.2, 1)

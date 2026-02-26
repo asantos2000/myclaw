@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://b651kjq8yp6p"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/bleep.gd" id="2_bleep"]
+[ext_resource type="Script" path="res://scripts/magnetic_object.gd" id="3_magnet"]
+[ext_resource type="Script" path="res://scripts/level_editor.gd" id="4_editor"]
+[ext_resource type="Script" path="res://scripts/experiment_ui.gd" id="5_ui"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.05, 0.07, 0.1, 1)
+
+[node name="MagneticObjects" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Bleep" type="CharacterBody2D" parent="."]
+position = Vector2(100, 360)
+script = ExtResource("2_bleep")
+move_speed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Bleep"]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bleep"]
+
+[node name="GlitchTimer" type="Timer" parent="Bleep"]
+wait_time = 0.1
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Bleep"]
+path_desired_distance = 4.0
+target_desired_distance = 4.0
+path_update_interval = 0.5
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(1180, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal"]
+scale = Vector2(0.5, 0.5)
+
+[node name="LevelEditor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_editor")
+
+[node name="ObjectPalette" type="VBoxContainer" parent="LevelEditor"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 300.0
+
+[node name="MaterialSelector" type="HBoxContainer" parent="LevelEditor"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 500.0
+offset_bottom = 450.0
+
+[node name="StartButton" type="Button" parent="LevelEditor"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 500.0
+offset_right = 150.0
+offset_bottom = 550.0
+text = "START EXPERIMENT"
+
+[node name="ExperimentUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ui")
+
+[node name="TimerLabel" type="Label" parent="ExperimentUI"]
+layout_mode = 1
+offset_left = 1100.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 60.0
+text = "Time: 30"
+horizontal_alignment = 2
+
+[node name="EmergencyStopButton" type="Button" parent="ExperimentUI"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 650.0
+offset_right = 250.0
+offset_bottom = 700.0
+text = "EMERGENCY STOP"
+
+[node name="BleepStatus" type="Label" parent="ExperimentUI"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 70.0
+text = "Health: 100%
+Status: Normal"
+
+[node name="ScientistPortrait" type="Sprite2D" parent="ExperimentUI"]
+position = Vector2(1100, 600)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="pressed" from="LevelEditor/StartButton" to="LevelEditor" method="_on_start_pressed"]
